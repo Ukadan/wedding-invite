@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,32 +13,37 @@
     <!-- Navigation -->
     <nav class="navbar">
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#story">Our Story</a></li>
-            <li><a href="#details">Details</a></li>
-            <li><a href="#rsvp">RSVP</a></li>
+            <li><a href="#home" data-i18n="nav_home">Басты бет</a></li>
+            <li><a href="#story" data-i18n="nav_story">Біздің тарихымыз</a></li>
+            <li><a href="#details" data-i18n="nav_details">Мәліметтер</a></li>
+            <li><a href="#rsvp" data-i18n="nav_rsvp">Қонаққа жауап</a></li>
         </ul>
+        <div class="lang-switcher">
+            <button type="button" class="lang-btn active" data-lang="kk">Қаз</button>
+            <button type="button" class="lang-btn" data-lang="en">En</button>
+            <button type="button" class="lang-btn" data-lang="ru">Ru</button>
+        </div>
     </nav>
 
     <!-- Hero Section -->
     <header id="home" class="hero">
         <div class="hero-content">
-            <p class="subtitle">We invite you to celebrate the wedding of</p>
-            <h1>Jane & John</h1>
-            <p class="date">October 24, 2026</p>
-            <a href="#rsvp" class="cta-button">RSVP Now</a>
+            <p class="subtitle" data-i18n="hero_subtitle">Біз сіздерді үйлену тойымызға шақырамыз</p>
+            <h1 data-i18n="hero_names">Jane &amp; John</h1>
+            <p class="date" data-i18n="hero_date">24 қазан, 2026</p>
+            <a href="#rsvp" class="cta-button" data-i18n="hero_cta">Қатысамын деп белгілеу</a>
         </div>
     </header>
 
     <!-- Our Story Section -->
     <section id="story" class="section light-bg">
         <div class="container">
-            <h2>Our Story</h2>
+            <h2 data-i18n="story_title">Біздің тарихымыз</h2>
             <div class="story-grid">
                 <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Couple Photo" class="story-img">
                 <div class="text-content">
-                    <p>It started with a coffee, followed by a walk in the park. Five years later, amidst the autumn leaves, a question was asked, and a "yes" was whispered.</p>
-                    <p>We are so excited to start this next chapter of our lives together and can't wait to celebrate with our favorite people.</p>
+                    <p data-i18n="story_p1">Барлығы бір шыныаяқ кофе мен саябақтағы серуеннен басталды. Бес жыл өткен соң, алтын күздің арасында сұрақ қойылып, ақырын ғана «иә» деген жауап естілді.</p>
+                    <p data-i18n="story_p2">Біз өміріміздің жаңа бетін бірге ашуға қуаныштымыз және осы күнді біз үшін қымбат жандармен атап өтуді асыға күтеміз.</p>
                 </div>
             </div>
         </div>
@@ -48,20 +53,20 @@
     <section id="details" class="section parallax-bg">
         <div class="overlay">
             <div class="container text-white">
-                <h2>The Details</h2>
+                <h2 data-i18n="details_title">Мәліметтер</h2>
                 <div class="details-grid">
                     <div class="detail-item">
-                        <h3>When</h3>
-                        <p>Saturday, October 24, 2026</p>
-                        <p>Ceremony: 4:00 PM</p>
-                        <p>Reception: 6:00 PM</p>
+                        <h3 data-i18n="details_when_title">Қашан</h3>
+                        <p data-i18n="details_when_date">Сенбі, 24 қазан 2026</p>
+                        <p data-i18n="details_when_ceremony">Салтанатты рәсім: 16:00</p>
+                        <p data-i18n="details_when_reception">Мерекелік кеш: 18:00</p>
                     </div>
                     <div class="detail-item">
-                        <h3>Where</h3>
-                        <p>The Grand Garden Estate</p>
-                        <p>123 Love Lane, New York, NY</p>
+                        <h3 data-i18n="details_where_title">Қайда</h3>
+                        <p data-i18n="details_where_place">The Grand Garden Estate</p>
+                        <p data-i18n="details_where_address">123 Love Lane, New York, NY</p>
                         <br>
-                        <a href="https://maps.google.com" target="_blank" class="map-link">View Map</a>
+                        <a href="https://maps.google.com" target="_blank" class="map-link" data-i18n="details_view_map">Картаны қарау</a>
                     </div>
                 </div>
             </div>
@@ -71,8 +76,8 @@
   <!-- RSVP Section -->
 <section id="rsvp" class="section light-bg">
     <div class="container">
-        <h2>RSVP</h2>
-        <p>Kindly respond by September 1st.</p>
+        <h2 data-i18n="rsvp_title">Қонаққа жауап</h2>
+        <p data-i18n="rsvp_subtitle">Өтініш, 1 қыркүйекке дейін жауап беріңіз.</p>
 
         <!-- 1. The Hidden Iframe (This catches the redirect) -->
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='#';}"></iframe>
@@ -92,34 +97,40 @@
             <!-- Question 1: Name -->
             <!-- Replace name="entry.123456" with your specific ID -->
             <div class="form-group">
-                <input type="text" name="entry.301367424" placeholder="Full Name(s)" required>
+                <input 
+                    type="text" 
+                    name="entry.301367424" 
+                    placeholder="Аты-жөні" 
+                    required
+                    data-i18n-placeholder="form_name_placeholder"
+                >
             </div>
 
             <!-- Question 2: Attending? -->
             <div class="form-group">
                 <select name="entry.1261223599" required>
-                    <option value="" disabled selected>Will you be attending?</option>
-                    <option value="Joyfully Accepts">Joyfully Accepts</option>
-                    <option value="Regretfully Declines">Regretfully Declines</option>
+                    <option value="" disabled selected data-i18n="form_attend_placeholder">Сіз тойға келесіз бе?</option>
+                    <option value="Joyfully Accepts" data-i18n="form_attend_yes">Иә, қуана келемін</option>
+                    <option value="Regretfully Declines" data-i18n="form_attend_no">Өкінішке орай, келе алмаймын</option>
                 </select>
             </div>
 
             <!-- Question 3: Guest Count -->
             <div class="form-group">
                 <select name="entry.1019732798">
-                    <option value="" disabled selected>Number of Guests</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
+                    <option value="" disabled selected data-i18n="form_guests_placeholder">Қанша қонақ болады?</option>
+                    <option value="1" data-i18n="form_guests_1">1</option>
+                    <option value="2" data-i18n="form_guests_2">2</option>
                 </select>
             </div>
 
-            <button type="submit" class="cta-button">Send RSVP</button>
+            <button type="submit" class="cta-button" data-i18n="form_submit">Жауапты жіберу</button>
         </form>
 
         <!-- 3. The Success Message (Hidden by default) -->
         <div id="success-message" style="display:none; margin-top: 20px;">
-            <h3>Thank you!</h3>
-            <p>Your RSVP has been sent. We can't wait to see you!</p>
+            <h3 data-i18n="success_title">Рахмет!</h3>
+            <p data-i18n="success_text">Сіздің жауабыңыз жіберілді. Сізді асыға күтеміз!</p>
         </div>
 
     </div>
@@ -128,18 +139,159 @@
 <!-- Simple Script to handle the UI switch -->
 <script>
     var submitted = false;
-    
+
     function showSuccessMessage() {
-        // Hide the form smoothly
         document.getElementById('rsvp-form').style.display = 'none';
-        // Show the success message
         document.getElementById('success-message').style.display = 'block';
     }
+
+    const translations = {
+        kk: {
+            nav_home: 'Басты бет',
+            nav_story: 'Біздің тарихымыз',
+            nav_details: 'Мәліметтер',
+            nav_rsvp: 'Қонаққа жауап',
+            hero_subtitle: 'Біз сіздерді үйлену тойымызға шақырамыз',
+            hero_names: 'Jane & John',
+            hero_date: '24 қазан, 2026',
+            hero_cta: 'Қатысамын деп белгілеу',
+            story_title: 'Біздің тарихымыз',
+            story_p1: 'Барлығы бір шыныаяқ кофе мен саябақтағы серуеннен басталды. Бес жыл өткен соң, алтын күздің арасында сұрақ қойылып, ақырын ғана «иә» деген жауап естілді.',
+            story_p2: 'Біз өміріміздің жаңа бетін бірге ашуға қуаныштымыз және осы күнді біз үшін қымбат жандармен атап өтуді асыға күтеміз.',
+            details_title: 'Мәліметтер',
+            details_when_title: 'Қашан',
+            details_when_date: 'Сенбі, 24 қазан 2026',
+            details_when_ceremony: 'Салтанатты рәсім: 16:00',
+            details_when_reception: 'Мерекелік кеш: 18:00',
+            details_where_title: 'Қайда',
+            details_where_place: 'The Grand Garden Estate',
+            details_where_address: '123 Love Lane, New York, NY',
+            details_view_map: 'Картаны қарау',
+            rsvp_title: 'Қонаққа жауап',
+            rsvp_subtitle: 'Өтініш, 1 қыркүйекке дейін жауап беріңіз.',
+            form_name_placeholder: 'Аты-жөні',
+            form_attend_placeholder: 'Сіз тойға келесіз бе?',
+            form_attend_yes: 'Иә, қуана келемін',
+            form_attend_no: 'Өкінішке орай, келе алмаймын',
+            form_guests_placeholder: 'Қанша қонақ болады?',
+            form_guests_1: '1',
+            form_guests_2: '2',
+            form_submit: 'Жауапты жіберу',
+            success_title: 'Рахмет!',
+            success_text: 'Сіздің жауабыңыз жіберілді. Сізді асыға күтеміз!',
+            footer_text: 'Jane & John үшін махаббатпен жасалды © 2026'
+        },
+        en: {
+            nav_home: 'Home',
+            nav_story: 'Our Story',
+            nav_details: 'Details',
+            nav_rsvp: 'RSVP',
+            hero_subtitle: 'We invite you to celebrate the wedding of',
+            hero_names: 'Jane & John',
+            hero_date: 'October 24, 2026',
+            hero_cta: 'RSVP Now',
+            story_title: 'Our Story',
+            story_p1: 'It started with a coffee, followed by a walk in the park. Five years later, amidst the autumn leaves, a question was asked, and a “yes” was whispered.',
+            story_p2: 'We are so excited to start this next chapter of our lives together and can’t wait to celebrate with our favorite people.',
+            details_title: 'The Details',
+            details_when_title: 'When',
+            details_when_date: 'Saturday, October 24, 2026',
+            details_when_ceremony: 'Ceremony: 4:00 PM',
+            details_when_reception: 'Reception: 6:00 PM',
+            details_where_title: 'Where',
+            details_where_place: 'The Grand Garden Estate',
+            details_where_address: '123 Love Lane, New York, NY',
+            details_view_map: 'View Map',
+            rsvp_title: 'RSVP',
+            rsvp_subtitle: 'Kindly respond by September 1st.',
+            form_name_placeholder: 'Full Name(s)',
+            form_attend_placeholder: 'Will you be attending?',
+            form_attend_yes: 'Joyfully Accepts',
+            form_attend_no: 'Regretfully Declines',
+            form_guests_placeholder: 'Number of Guests',
+            form_guests_1: '1',
+            form_guests_2: '2',
+            form_submit: 'Send RSVP',
+            success_title: 'Thank you!',
+            success_text: 'Your RSVP has been sent. We can’t wait to see you!',
+            footer_text: 'Made with love for Jane & John © 2026'
+        },
+        ru: {
+            nav_home: 'Главная',
+            nav_story: 'Наша история',
+            nav_details: 'Детали',
+            nav_rsvp: 'Ответ на приглашение',
+            hero_subtitle: 'Мы приглашаем вас отпраздновать нашу свадьбу',
+            hero_names: 'Jane & John',
+            hero_date: '24 октября 2026',
+            hero_cta: 'Оставить ответ',
+            story_title: 'Наша история',
+            story_p1: 'Все началось с кофе и прогулки в парке. Спустя пять лет, среди осенних листьев, был задан вопрос и тихо прозвучало «да».',
+            story_p2: 'Мы счастливы начать новую главу нашей жизни вместе и с нетерпением ждем, чтобы отпраздновать этот день с самыми близкими людьми.',
+            details_title: 'Детали',
+            details_when_title: 'Когда',
+            details_when_date: 'Суббота, 24 октября 2026',
+            details_when_ceremony: 'Церемония: 16:00',
+            details_when_reception: 'Праздничный ужин: 18:00',
+            details_where_title: 'Где',
+            details_where_place: 'The Grand Garden Estate',
+            details_where_address: '123 Love Lane, New York, NY',
+            details_view_map: 'Открыть карту',
+            rsvp_title: 'Ответ на приглашение',
+            rsvp_subtitle: 'Пожалуйста, ответьте до 1 сентября.',
+            form_name_placeholder: 'Имя и фамилия',
+            form_attend_placeholder: 'Вы придёте на свадьбу?',
+            form_attend_yes: 'С радостью приду',
+            form_attend_no: 'К сожалению, не смогу прийти',
+            form_guests_placeholder: 'Сколько гостей будет?',
+            form_guests_1: '1',
+            form_guests_2: '2',
+            form_submit: 'Отправить ответ',
+            success_title: 'Спасибо!',
+            success_text: 'Ваш ответ отправлен. Мы с нетерпением ждем встречи с вами!',
+            footer_text: 'Сделано с любовью для Jane & John © 2026'
+        }
+    };
+
+    function setLanguage(lang) {
+        var dict = translations[lang] || translations['kk'];
+
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n');
+            if (dict[key]) {
+                el.textContent = dict[key];
+            }
+        });
+
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n-placeholder');
+            if (dict[key]) {
+                el.placeholder = dict[key];
+            }
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(function (btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.lang-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var lang = btn.getAttribute('data-lang');
+                setLanguage(lang);
+            });
+        });
+
+        setLanguage('kk');
+    });
 </script>
 
 
     <footer>
-        <p>Made with love for Jane & John &copy; 2026</p>
+        <p data-i18n="footer_text">Jane &amp; John үшін махаббатпен жасалды &copy; 2026</p>
     </footer>
 
 </body>
