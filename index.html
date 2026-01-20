@@ -24,9 +24,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#photo" data-i18n="nav_photo">Фото</a></li>
-                <li><a href="#we" data-i18n="nav_we">Біз</a></li>
-                <li><a href="#invite" data-i18n="nav_invite">Шақыру</a></li>
-                <li><a href="#form" data-i18n="nav_form">Толтыру</a></li>
+                <li><a href="#invite" data-i18n="nav_invite">Приглашение</a></li>
+                <li><a href="#we" data-i18n="nav_address">Адрес</a></li>
+                <li><a href="#form" data-i18n="nav_form">Заполнение</a></li>
             </ul>
             <div class="lang-switcher" aria-label="Выбор языка">
                 <button type="button" class="lang-btn active" data-lang="kk">Қаз</button>
@@ -51,7 +51,7 @@
     <section id="we" class="section section-we">
         <div class="container">
             <div class="card">
-                <h2 class="section-title" data-i18n="we_title">Біз</h2>
+                <h2 class="section-title" data-i18n="address_title">Мекенжай</h2>
                 <p class="lead" data-i18n="we_text">
                     Али мен Багдат өміріміздегі ең маңызды күндердің бірін сізбен бірге атап өткіміз келеді.
                 </p>
@@ -134,11 +134,9 @@
 
     <!-- Music toggle button -->
     <button type="button" class="music-btn" id="music-toggle" aria-pressed="false" aria-label="Toggle music">
-        <span class="music-icon" id="music-icon" aria-hidden="true">
-            <span class="music-speaker"></span>
-            <span class="music-wave wave-1"></span>
-            <span class="music-wave wave-2"></span>
-        </span>
+        <svg class="music-icon" id="music-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="music-speaker" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" fill="currentColor"/>
+        </svg>
     </button>
 
     <!-- Thank you overlay -->
@@ -165,13 +163,13 @@
         const translations = {
             kk: {
                 nav_photo: 'Фото',
-                nav_we: 'Біз',
                 nav_invite: 'Шақыру',
+                nav_address: 'Мекенжай',
                 nav_form: 'Толтыру',
                 intro_kicker: 'ALI & BAGDAT',
                 intro_title: 'Үйлену тойына шақыру',
                 intro_hint: 'Төмен сырғытыңыз',
-                we_title: 'Біз',
+                address_title: 'Мекенжай',
                 we_text: 'Али мен Багдат өміріміздегі ең маңызды күндердің бірін сізбен бірге атап өткіміз келеді.',
                 invite_kicker: 'Үйлену тойына шақыру',
                 invite_title: 'Біз сіздерді үйлену тойымызға шақырамыз',
@@ -199,13 +197,13 @@
             },
             en: {
                 nav_photo: 'Photo',
-                nav_we: 'Us',
                 nav_invite: 'Invitation',
+                nav_address: 'Address',
                 nav_form: 'Details',
                 intro_kicker: 'ALI & BAGDAT',
                 intro_title: 'Wedding Invitation',
                 intro_hint: 'Scroll down',
-                we_title: 'Us',
+                address_title: 'Address',
                 we_text: 'Ali and Bagdat would be honoured to share one of the most important days of our lives with you.',
                 invite_kicker: 'Wedding Invitation',
                 invite_title: 'We invite you to our wedding',
@@ -233,13 +231,13 @@
             },
             ru: {
                 nav_photo: 'Фото',
-                nav_we: 'Мы',
                 nav_invite: 'Приглашение',
+                nav_address: 'Адрес',
                 nav_form: 'Заполнение',
                 intro_kicker: 'ALI & BAGDAT',
                 intro_title: 'Приглашение на свадьбу',
                 intro_hint: 'Прокрутите вниз',
-                we_title: 'Мы',
+                address_title: 'Адрес',
                 we_text: 'Али и Багдат с радостью приглашают вас разделить с ними один из самых важных дней нашей жизни.',
                 invite_kicker: 'Приглашение на свадьбу',
                 invite_title: 'Мы приглашаем вас на нашу свадьбу',
@@ -303,6 +301,13 @@
                 if (musicIcon) {
                     musicIcon.classList.toggle('muted', !on);
                 }
+            }
+            
+            // Убеждаемся, что иконка видна
+            if (musicIcon) {
+                musicIcon.style.display = 'block';
+                musicIcon.style.visibility = 'visible';
+                musicIcon.style.opacity = '1';
             }
 
             // Проверяем наличие аудио элемента
@@ -409,5 +414,3 @@
 
 </body>
 </html>
-
-
