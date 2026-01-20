@@ -25,7 +25,6 @@
             <ul class="nav-links">
                 <li><a href="#photo" data-i18n="nav_photo">Фото</a></li>
                 <li><a href="#invite" data-i18n="nav_invite">Приглашение</a></li>
-                <li><a href="#we" data-i18n="nav_address">Адрес</a></li>
                 <li><a href="#form" data-i18n="nav_form">Заполнение</a></li>
             </ul>
             <div class="lang-switcher" aria-label="Выбор языка">
@@ -47,39 +46,40 @@
         </div>
     </header>
 
-    <!-- Section: We -->
-    <section id="we" class="section section-we">
-        <div class="container">
-            <div class="card">
-                <h2 class="section-title" data-i18n="address_title">Мекенжай</h2>
-                <p class="lead" data-i18n="we_text">
-                    Али мен Багдат өміріміздегі ең маңызды күндердің бірін сізбен бірге атап өткіміз келеді.
-                </p>
-            </div>
-        </div>
-    </section>
-
     <!-- Section: Invitation -->
     <section id="invite" class="section section-invite">
         <div class="container">
             <div class="invite-card">
-                <p class="kicker" data-i18n="invite_kicker">Үйлену тойына шақыру</p>
-                <h2 class="invite-title" data-i18n="invite_title">Біз сіздерді үйлену тойымызға шақырамыз</h2>
-                <p class="names" data-i18n="invite_names">Али &amp; Багдат</p>
-                <div class="invite-details">
-                    <div class="detail">
-                        <div class="detail-label" data-i18n="invite_date_label">Күні</div>
-                        <div class="detail-value" data-i18n="invite_date_value">2026 жылғы 24 қазан</div>
+                <p class="invite-greeting" data-i18n="invite_greeting">Құрметті қонақ!</p>
+                <div class="invite-text-block">
+                    <p class="invite-text-line" data-i18n="invite_text_1">Сізді</p>
+                    <p class="invite-names" data-i18n="invite_names">Али мен Бағдаттың</p>
+                    <p class="invite-text-line" data-i18n="invite_text_2">өмірлеріндегі ең маңызды күндерінің бірі –</p>
+                    <p class="invite-text-line" data-i18n="invite_text_3">үйлену тойының</p>
+                    <p class="invite-text-line" data-i18n="invite_text_4">қадірлі қонағы болуға шақырамыз.</p>
+                </div>
+                
+                <div class="invite-info">
+                    <div class="info-item">
+                        <span class="info-icon">🗓</span>
+                        <span class="info-text" data-i18n="invite_date">25 сәуір</span>
                     </div>
-                    <div class="detail">
-                        <div class="detail-label" data-i18n="invite_place_label">Орыны</div>
-                        <div class="detail-value" data-i18n="invite_place_value">“Aurora” банкет залы</div>
+                    <div class="info-item">
+                        <span class="info-icon">⏰</span>
+                        <span class="info-text" data-i18n="invite_time">19:00</span>
                     </div>
-                    <div class="detail">
-                        <div class="detail-label" data-i18n="invite_address_label">Мекенжай</div>
-                        <div class="detail-value" data-i18n="invite_address_value">Алматы қ., Төле би көш., 123</div>
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <span class="info-text" data-i18n="invite_address">Орал қаласы, Зағачанск ықшам ауданы, Айтқұлова 29</span>
                     </div>
                 </div>
+
+                <div class="invite-hosts">
+                    <p class="hosts-label" data-i18n="invite_hosts_label">Той иелері:</p>
+                    <p class="hosts-names" data-i18n="invite_hosts">Сәтжан &amp; Гүлсайран</p>
+                </div>
+
+                <p class="invite-closing" data-i18n="invite_closing">Сізді асыға күтеміз 🤍</p>
 
                 <button type="button" class="cta-button" id="accept-invite" data-i18n="invite_button">
                     Шақыруды қабылдау
@@ -164,22 +164,22 @@
             kk: {
                 nav_photo: 'Фото',
                 nav_invite: 'Шақыру',
-                nav_address: 'Мекенжай',
                 nav_form: 'Толтыру',
                 intro_kicker: 'ALI & BAGDAT',
                 intro_title: 'Үйлену тойына шақыру',
                 intro_hint: 'Төмен сырғытыңыз',
-                address_title: 'Мекенжай',
-                we_text: 'Али мен Багдат өміріміздегі ең маңызды күндердің бірін сізбен бірге атап өткіміз келеді.',
-                invite_kicker: 'Үйлену тойына шақыру',
-                invite_title: 'Біз сіздерді үйлену тойымызға шақырамыз',
-                invite_names: 'Али & Bagdat',
-                invite_date_label: 'Күні',
-                invite_date_value: '2026 жылғы 24 қазан',
-                invite_place_label: 'Орыны',
-                invite_place_value: '“Aurora” банкет залы',
-                invite_address_label: 'Мекенжай',
-                invite_address_value: 'Алматы қ., Төле би көш., 123',
+                invite_greeting: 'Құрметті қонақ!',
+                invite_text_1: 'Сізді',
+                invite_names: 'Али мен Бағдаттың',
+                invite_text_2: 'өмірлеріндегі ең маңызды күндерінің бірі –',
+                invite_text_3: 'үйлену тойының',
+                invite_text_4: 'қадірлі қонағы болуға шақырамыз.',
+                invite_date: '25 сәуір',
+                invite_time: '19:00',
+                invite_address: 'Орал қаласы, Зағачанск ықшам ауданы, Айтқұлова 29',
+                invite_hosts_label: 'Той иелері:',
+                invite_hosts: 'Сәтжан & Гүлсайран',
+                invite_closing: 'Сізді асыға күтеміз 🤍',
                 invite_button: 'Шақыруды қабылдау',
                 form_title: 'Толтыру',
                 form_subtitle: 'Қонақтардың мәліметтерін енгізіңіз (мәліметтер ешқайда жіберілмейді).',
@@ -198,22 +198,22 @@
             en: {
                 nav_photo: 'Photo',
                 nav_invite: 'Invitation',
-                nav_address: 'Address',
                 nav_form: 'Details',
                 intro_kicker: 'ALI & BAGDAT',
                 intro_title: 'Wedding Invitation',
                 intro_hint: 'Scroll down',
-                address_title: 'Address',
-                we_text: 'Ali and Bagdat would be honoured to share one of the most important days of our lives with you.',
-                invite_kicker: 'Wedding Invitation',
-                invite_title: 'We invite you to our wedding',
+                invite_greeting: 'Dear Guest!',
+                invite_text_1: 'We invite you',
                 invite_names: 'Ali & Bagdat',
-                invite_date_label: 'Date',
-                invite_date_value: 'October 24, 2026',
-                invite_place_label: 'Venue',
-                invite_place_value: 'Aurora Banquet Hall',
-                invite_address_label: 'Address',
-                invite_address_value: 'Almaty, Tole Bi street, 123',
+                invite_text_2: 'to be an honored guest at one of the most important days',
+                invite_text_3: 'of their lives –',
+                invite_text_4: 'their wedding celebration.',
+                invite_date: 'April 25',
+                invite_time: '19:00',
+                invite_address: 'Oral city, Zagachansk rural district, Aitkulova 29',
+                invite_hosts_label: 'Wedding hosts:',
+                invite_hosts: 'Satjan & Gulsayran',
+                invite_closing: 'We look forward to seeing you 🤍',
                 invite_button: 'Accept invitation',
                 form_title: 'Details',
                 form_subtitle: 'Please fill in guest details (nothing will be sent anywhere).',
@@ -232,22 +232,22 @@
             ru: {
                 nav_photo: 'Фото',
                 nav_invite: 'Приглашение',
-                nav_address: 'Адрес',
                 nav_form: 'Заполнение',
                 intro_kicker: 'ALI & BAGDAT',
                 intro_title: 'Приглашение на свадьбу',
                 intro_hint: 'Прокрутите вниз',
-                address_title: 'Адрес',
-                we_text: 'Али и Багдат с радостью приглашают вас разделить с ними один из самых важных дней нашей жизни.',
-                invite_kicker: 'Приглашение на свадьбу',
-                invite_title: 'Мы приглашаем вас на нашу свадьбу',
-                invite_names: 'Али & Багдат',
-                invite_date_label: 'Дата',
-                invite_date_value: '24 октября 2026',
-                invite_place_label: 'Место',
-                invite_place_value: 'Банкет-холл «Aurora»',
-                invite_address_label: 'Адрес',
-                invite_address_value: 'г. Алматы, ул. Толе би, 123',
+                invite_greeting: 'Уважаемый гость!',
+                invite_text_1: 'Мы приглашаем вас',
+                invite_names: 'Али и Бағдат',
+                invite_text_2: 'стать почётным гостем одного из самых важных дней',
+                invite_text_3: 'их жизни –',
+                invite_text_4: 'свадебного торжества.',
+                invite_date: '25 апреля',
+                invite_time: '19:00',
+                invite_address: 'г. Уральск, Загачанский сельский округ, ул. Айткулова 29',
+                invite_hosts_label: 'Хозяева торжества:',
+                invite_hosts: 'Сатжан & Гүлсайран',
+                invite_closing: 'Ждём вас с нетерпением 🤍',
                 invite_button: 'Принять приглашение',
                 form_title: 'Заполнение',
                 form_subtitle: 'Введите данные гостей (ничего никуда не отправляется).',
