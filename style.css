@@ -284,33 +284,89 @@ body.intro-lift .intro-bg { transform: translateY(-18%); }
     margin: 32px 0;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
     align-items: center;
 }
 
 .info-item {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    align-items: flex-start;
+    gap: 14px;
     font-size: clamp(1rem, 2vw, 1.2rem);
     color: rgba(42, 42, 42, 0.9);
-    padding: 12px 20px;
-    background: rgba(183, 110, 121, 0.08);
-    border-radius: 16px;
-    border: 1px solid rgba(183, 110, 121, 0.15);
-    max-width: 600px;
+    padding: 16px 22px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 18px;
+    border: 1px solid rgba(183, 110, 121, 0.2);
+    max-width: 650px;
     width: 100%;
+    box-shadow: 0 4px 12px rgba(183, 110, 121, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(183, 110, 121, 0.12);
 }
 
 .info-icon {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     flex-shrink: 0;
+    margin-top: 2px;
 }
 
 .info-text {
     flex: 1;
     text-align: left;
     font-weight: 500;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.gis-link {
+    color: #2ecc71;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(46, 204, 113, 0.3);
+    transition: color 0.2s ease, border-color 0.2s ease;
+    display: inline-block;
+}
+
+.gis-link:hover {
+    color: #27ae60;
+    border-bottom-color: #27ae60;
+}
+
+.gis-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 8px;
+}
+
+.gis-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(46, 204, 113, 0.45);
+}
+
+.gis-button:active {
+    transform: translateY(0);
+}
+
+.gis-icon {
+    font-size: 1.2rem;
 }
 
 .invite-hosts {
@@ -432,6 +488,7 @@ body.intro-lift .intro-bg { transform: translateY(-18%); }
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(12px);
     padding: 0;
+    margin: 0;
     cursor: pointer;
     box-shadow: 0 8px 24px rgba(183, 110, 121, 0.25), 0 2px 8px rgba(0,0,0,0.1);
     display: flex !important;
@@ -440,6 +497,12 @@ body.intro-lift .intro-bg { transform: translateY(-18%); }
     transition: all 0.3s ease;
     visibility: visible;
     opacity: 1;
+}
+
+.music-btn svg {
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 
 .music-btn:hover {
@@ -464,6 +527,9 @@ body.intro-lift .intro-bg { transform: translateY(-18%); }
     color: #b76e79;
     transition: color 0.3s ease, opacity 0.3s ease;
     display: block;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
 }
 
 .music-btn.on .music-icon {
@@ -485,6 +551,10 @@ body.intro-lift .intro-bg { transform: translateY(-18%); }
     .section { padding-top: 120px; }
     .invite-info { gap: 12px; }
     .info-item { padding: 10px 16px; font-size: 0.95rem; }
+    .info-item .info-text { flex-direction: column; gap: 4px; }
+    .gis-link { font-size: 0.9rem; }
+    .gis-button { padding: 12px 20px; font-size: 0.95rem; }
     .invite-hosts { padding: 16px; }
     body.intro-lift .intro-bg { transform: translateY(-10%); }
 }
+
