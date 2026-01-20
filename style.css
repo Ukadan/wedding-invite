@@ -407,54 +407,24 @@ body.intro-lift .intro-bg { transform: translateY(-18%); }
 }
 
 .music-icon {
-    position: relative;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    color: #b76e79;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    display: block;
 }
 
-.music-speaker {
-    position: absolute;
-    left: 2px;
-    top: 5px;
-    width: 9px;
-    height: 14px;
-    border-radius: 2px;
-    background: #b76e79;
-    transition: background 0.3s;
+.music-btn.on .music-icon {
+    color: white;
 }
 
-.music-btn.on .music-speaker {
-    background: white;
+.music-btn.on .music-icon .music-speaker {
+    opacity: 1;
 }
 
-.music-wave {
-    position: absolute;
-    right: 0;
-    top: 4px;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    border: 2px solid #b76e79;
-    border-left-color: transparent;
-    border-bottom-color: transparent;
-    transform: rotate(20deg);
-    opacity: 0.7;
-    transition: opacity 0.3s, border-color 0.3s;
+.music-icon.muted {
+    opacity: 0.4;
 }
-
-.music-btn.on .music-wave {
-    border-color: white;
-    border-left-color: transparent;
-    border-bottom-color: transparent;
-    opacity: 0.9;
-}
-
-.music-icon.muted .music-wave {
-    opacity: 0.2;
-}
-
-.wave-1 { right: 0px; }
-.wave-2 { right: -6px; opacity: 0.5; }
 
 /* Responsive */
 @media (max-width: 768px) {
