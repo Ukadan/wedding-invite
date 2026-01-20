@@ -326,6 +326,9 @@ body.intro-lift .intro-bg { transform: translateY(-18%); }
     backdrop-filter: blur(6px);
     z-index: 2000;
 }
+.thanks[hidden] {
+    display: none !important;
+}
 
 .no-scroll { overflow: hidden; }
 
