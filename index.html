@@ -10,6 +10,11 @@
 </head>
 <body>
 
+    <!-- Background music -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="toizhira.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- Navigation -->
     <nav class="navbar" aria-label="Навигация">
         <div class="nav-inner">
@@ -126,6 +131,15 @@
             </div>
         </div>
     </section>
+
+    <!-- Music toggle button -->
+    <button type="button" class="music-btn" id="music-toggle" aria-pressed="false" aria-label="Toggle music">
+        <span class="music-icon" id="music-icon" aria-hidden="true">
+            <span class="music-speaker"></span>
+            <span class="music-wave wave-1"></span>
+            <span class="music-wave wave-2"></span>
+        </span>
+    </button>
 
     <!-- Thank you overlay -->
     <div class="thanks" id="thanks" hidden role="dialog" aria-modal="true" aria-labelledby="thanks-title">
@@ -277,6 +291,46 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
+            // Music toggle
+            var audio = document.getElementById('bg-music');
+            var musicBtn = document.getElementById('music-toggle');
+            var musicIcon = document.getElementById('music-icon');
+
+            function setMusicUI(on) {
+                if (!musicBtn) return;
+                musicBtn.setAttribute('aria-pressed', String(on));
+                musicBtn.classList.toggle('on', on);
+                if (musicIcon) {
+                    musicIcon.classList.toggle('muted', !on);
+                }
+            }
+
+            // Попробуем включить музыку при загрузке (если браузер позволит)
+            if (audio) {
+                audio.volume = 0.4;
+                audio.play().then(function () {
+                    setMusicUI(true);
+                }).catch(function () {
+                    setMusicUI(false);
+                });
+            }
+
+            if (musicBtn && audio) {
+                setMusicUI(false);
+                musicBtn.addEventListener('click', function () {
+                    if (audio.paused) {
+                        audio.play().then(function () {
+                            setMusicUI(true);
+                        }).catch(function () {
+                            setMusicUI(false);
+                        });
+                    } else {
+                        audio.pause();
+                        setMusicUI(false);
+                    }
+                });
+            }
+
             // Language switcher
             document.querySelectorAll('.lang-btn').forEach(function (btn) {
                 btn.addEventListener('click', function () {
@@ -319,5 +373,7 @@
     </script>
 
 </body>
+</html>
+
 </html>
 
