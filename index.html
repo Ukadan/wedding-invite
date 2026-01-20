@@ -305,30 +305,65 @@
                 }
             }
 
-            // Попробуем включить музыку при загрузке (если браузер позволит)
-            if (audio) {
+            // Проверяем наличие аудио элемента
+            if (audio && musicBtn) {
                 audio.volume = 0.4;
-                audio.play().then(function () {
-                    setMusicUI(true);
-                }).catch(function () {
-                    setMusicUI(false);
+                
+                // Убеждаемся, что кнопка видна
+                musicBtn.style.display = 'flex';
+                musicBtn.style.visibility = 'visible';
+                musicBtn.style.opacity = '1';
+                
+                // Обработка ошибок загрузки
+                audio.addEventListener('error', function(e) {
+                    console.warn('Не удалось загрузить аудио файл toizhira.mp3:', e);
+                    // Кнопка остается видимой, но показывает, что файл не найден
+                    musicBtn.style.opacity = '0.6';
+                    musicBtn.title = 'Аудио файл не найден';
                 });
-            }
 
-            if (musicBtn && audio) {
-                setMusicUI(false);
+                audio.addEventListener('loadeddata', function() {
+                    // Файл загружен, пробуем автоплей
+                    audio.play().then(function () {
+                        setMusicUI(true);
+                    }).catch(function (err) {
+                        // Автоплей заблокирован - это нормально
+                        console.log('Автоплей заблокирован браузером (нужно взаимодействие пользователя)');
+                        setMusicUI(false);
+                    });
+                });
+
+                // Если файл уже загружен
+                if (audio.readyState >= 2) {
+                    audio.play().then(function () {
+                        setMusicUI(true);
+                    }).catch(function () {
+                        setMusicUI(false);
+                    });
+                }
+
+                // Клик по кнопке
                 musicBtn.addEventListener('click', function () {
                     if (audio.paused) {
                         audio.play().then(function () {
                             setMusicUI(true);
-                        }).catch(function () {
+                        }).catch(function (err) {
+                            console.warn('Не удалось воспроизвести музыку:', err);
                             setMusicUI(false);
+                            alert('Не удалось воспроизвести музыку. Проверьте, что файл toizhira.mp3 загружен на сервер.');
                         });
                     } else {
                         audio.pause();
                         setMusicUI(false);
                     }
                 });
+            } else {
+                // Если элементов нет, показываем кнопку, но делаем её неактивной
+                if (musicBtn) {
+                    musicBtn.style.display = 'flex';
+                    musicBtn.style.opacity = '0.5';
+                    musicBtn.style.cursor = 'not-allowed';
+                }
             }
 
             // Language switcher
@@ -375,5 +410,4 @@
 </body>
 </html>
 
-</html>
 
