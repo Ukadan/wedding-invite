@@ -149,7 +149,7 @@ a { text-decoration: none; color: inherit; transition: 0.25s; }
 .intro-bg {
     position: absolute;
     inset: 0;
-    background-image: url('wenddingPhoto.jpg');
+    background-image: url('wenddingPhoto.JPG');
     background-position: center;
     background-size: cover; 
     background-repeat: no-repeat;
