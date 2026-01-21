@@ -429,7 +429,7 @@
 
             document.getElementById('guest-form').addEventListener('submit', function (e) {
                 e.preventDefault();
-            
+                submitBtn.disabled = true;
                 const params = new URLSearchParams();
                 params.append('guest1', document.getElementById('guest1').value);
                 params.append(
@@ -459,6 +459,9 @@
                 })
                 .catch(() => {
                     alert('Қате болды. Қайтадан көріңіз.');
+                })
+                .finally(() => {
+                    submitBtn.disabled = false; 
                 });
             });
             document.getElementById('close-thanks').addEventListener('click', function () {
