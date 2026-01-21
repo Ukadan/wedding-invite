@@ -429,7 +429,8 @@
 
             document.getElementById('guest-form').addEventListener('submit', function (e) {
                 e.preventDefault();
-                submitBtn.disabled = true;
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.disabled = true; 
                 const params = new URLSearchParams();
                 params.append('guest1', document.getElementById('guest1').value);
                 params.append(
@@ -464,6 +465,7 @@
                     submitBtn.disabled = false; 
                 });
             });
+            
             document.getElementById('close-thanks').addEventListener('click', function () {
                 thanks.hidden = true;
                 document.body.classList.remove('no-scroll');
