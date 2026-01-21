@@ -408,19 +408,18 @@
             document.getElementById('guest-form').addEventListener('submit', function (e) {
                 e.preventDefault();
             
-                const data = {
-                    guest1: document.getElementById('guest1').value,
-                    guest2: document.getElementById('with-spouse').checked
+                const params = new URLSearchParams();
+                params.append('guest1', document.getElementById('guest1').value);
+                params.append(
+                    'guest2',
+                    document.getElementById('with-spouse').checked
                         ? document.getElementById('guest2').value
                         : ''
-                };
+                );
             
-                fetch('https://script.google.com/macros/s/AKfycbxzZlLnqWNLQ5Nluxohy3qCqcRLEtPQQk1aVX5XBzT8iBR-AcmZpE5jitd54aR5WQq4/exec', {
+                fetch('https://script.google.com/macros/s/AKfycbx892IFcKDnnRh_bBV7-Z6ySLJxuIugzeyt_L_KBPAEU3OdhRJ75gCxAjluqSARH-ya/exec', {
                     method: 'POST',
-                    body: JSON.stringify(data),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
+                    body: params
                 })
                 .then(() => {
                     document.getElementById('thanks').hidden = false;
@@ -430,7 +429,6 @@
                     alert('Қате болды. Қайтадан көріңіз.');
                 });
             });
-
             document.getElementById('close-thanks').addEventListener('click', function () {
                 thanks.hidden = true;
                 document.body.classList.remove('no-scroll');
