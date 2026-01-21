@@ -142,16 +142,6 @@ a { text-decoration: none; color: inherit; transition: 0.25s; }
     overflow: hidden;
 }
 
-.section-form .container {
-    position: relative;
-    z-index: 2;
-}
-
-.form-card {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(6px);
-}
-
 .section-bg {
     position: absolute;
     inset: 0;
@@ -255,6 +245,16 @@ a { text-decoration: none; color: inherit; transition: 0.25s; }
 }
 
 .intro-hint { opacity: 0.85; font-size: 0.95rem; }
+
+.section-form {
+    padding: 60px 18px;
+    min-height: auto;
+    background: #fff;
+}
+
+.section-form .form-card {
+    margin-top: 0;
+}
 
 body.intro-lift .intro-bg { transform: translateY(-18%); }
 
