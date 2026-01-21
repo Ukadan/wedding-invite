@@ -444,6 +444,16 @@
                     body: params
                 })
                 .then(() => {
+                    const form = document.getElementById('guest-form');
+                    const withSpouse = document.getElementById('with-spouse');
+                    const spouseField = document.getElementById('spouse-field');
+                    const guest2 = document.getElementById('guest2');
+                    
+                    form.reset();
+                    withSpouse.checked = false;
+                    spouseField.hidden = true;
+                    guest2.required = false;
+                    guest2.value = '';
                     document.getElementById('thanks').hidden = false;
                     document.body.classList.add('no-scroll');
                 })
